@@ -95,10 +95,3 @@ function restFunc(str1: string, str2: string, ...restStr): string {
 
 console.log(restFunc("aa", "bb", "cc", "dd", "ee", "ff"));
 
-function argFunc(): void {
-    for (let i = 0; i < arguments.length; i++) {
-    console.log(arguments[i]);
-    }
-}
-
-console.log(argFunc("aa", "aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa"));

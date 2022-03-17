@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
+    
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TS vs JS</title>
+        <title>React</title>
     </head>
 
     <body>
-        <script type="module" src="hello.js"></script>        
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <div id="vanilla"></div>
+        <div id="react"></div>
+        <div id="reactJSX"></div>
+        <script type="text/babel">
+            const vanilla = document.getElementById("vanilla");
+            const vanillaElement = document.createElement("h1");
+            vanillaElement.textContent = "Hello, vanilla JS";
+            vanilla.appendChild(vanillaElement);
+
+            const react = document.getElementById("react");
+            const reactElement = React.createElement("h1", {children: "Hello, React!"});
+            ReactDOM.render(reactElement, react);
+
+
+            const text = "Hello, JSX grammar!";
+            const reactJSX = document.getElementById("reactJSX");
+            const jsxElement = <h1>{text}</h1>;
+            ReactDOM.render(jsxElement, reactJSX);
+        </script>
     </body>
 </html>
