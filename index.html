@@ -22,61 +22,61 @@
         <div id="elementTest3"></div>
         <div id="elementTest4"></div>
         <script type="text/babel">
-            const vanilla = document.getElementById("vanilla");
-            const vanillaElement = document.createElement("h1");
-            vanillaElement.textContent = "Hello, vanilla JS";
-            vanilla.appendChild(vanillaElement);
+            // const vanilla = document.getElementById("vanilla");
+            // const vanillaElement = document.createElement("h1");
+            // vanillaElement.textContent = "Hello, vanilla JS";
+            // vanilla.appendChild(vanillaElement);
 
-            const react = document.getElementById("react");
-            const reactElement = React.createElement("h1", {children: "Hello, React!"});
-            ReactDOM.render(reactElement, react);
+            // const react = document.getElementById("react");
+            // const reactElement = React.createElement("h1", {children: "Hello, React!"});
+            // ReactDOM.render(reactElement, react);
 
 
-            const text = "Hello, JSX grammar!";
-            const reactJSX = document.getElementById("reactJSX");
-            const jsxElement = <h1>{text}</h1>;
-            ReactDOM.render(jsxElement, reactJSX);
+            // const text = "Hello, JSX grammar!";
+            // const reactJSX = document.getElementById("reactJSX");
+            // const jsxElement = <h1>{text}</h1>;
+            // ReactDOM.render(jsxElement, reactJSX);
 
             const element = (
                 <div children={[
-                    React.createElement("h3", null, "Hi"),
-                    React.createElement("h3", null, "Hi"),
-                    React.createElement("h3", null, "Hi"),
+                    React.createElement("h1", {style: {color: "green"}}, "Props"),
+                    React.createElement("h1", {onClick: ()=> {console.log("Clicked")}}, "Props"),
+                    React.createElement("h1", {name: "props"}, "Props"),
                 ]} />
             );
 
             ReactDOM.render(element, elementTest);
 
-            const elementChildren = (
-                <React.Fragment 
-                    children={[
-                        <h3>Child</h3>,
-                        <h3>Child</h3>,
-                        <h3>Child</h3>,
-                    ]}/>
-            );
+            // const elementChildren = (
+            //     <React.Fragment 
+            //         children={[
+            //             <h3>Child</h3>,
+            //             <h3>Child</h3>,
+            //             <h3>Child</h3>,
+            //         ]}/>
+            // );
 
-            ReactDOM.render(elementChildren, elementTest2);
+            // ReactDOM.render(elementChildren, elementTest2);
 
-            const elementFragment = (
-                <React.Fragment>
-                    <h3>Fragment</h3>
-                    <h3>Fragment</h3>
-                    <h3>Fragment</h3>
-                </React.Fragment>
-            );
+            // const elementFragment = (
+            //     <React.Fragment>
+            //         <h3>Fragment</h3>
+            //         <h3>Fragment</h3>
+            //         <h3>Fragment</h3>
+            //     </React.Fragment>
+            // );
 
-            ReactDOM.render(elementFragment, elementTest3);
+            // ReactDOM.render(elementFragment, elementTest3);
 
-            const emptyFragment = (
-                <>
-                    <h3>Fragment?</h3>
-                    <h3>Fragment?</h3>
-                    <h3>Fragment?</h3>
-                </>
-            );
+            // const emptyFragment = (
+            //     <>
+            //         <h3>Fragment?</h3>
+            //         <h3>Fragment?</h3>
+            //         <h3>Fragment?</h3>
+            //     </>
+            // );
 
-            ReactDOM.render(emptyFragment, elementTest4);
+            // ReactDOM.render(emptyFragment, elementTest4);
             
         </script>
     </body>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>React</title>
+    </head>
+
+    <body>
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <div id="props"></div>
+        <div id="app"></div>
+        <script type="text/babel">
+           
+            function Welcome(props) {
+                return <h1>Hello, {props.name}! I'm {props.myName}</h1>;
+            }
+
+            const where = document.getElementById("props");
+            const element = <Welcome name="Sara" myName="Lee" />;
+            ReactDOM.render(element, where);
+
+
+            function App(props) {
+                return (
+                    <>
+                        <Welcome name="Tony" />
+                        <Welcome name="Hulk" />
+                        <Welcome name="Captain" />
+                    </>
+                )
+            }
+
+            const where2 = document.getElementById("app");
+            const element2 = <App />;
+            ReactDOM.render(element2, where2);
+        </script>
+    </body>
+</html>
