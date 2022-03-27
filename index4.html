@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+  </head>
+
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+    <div id="root2"></div>
+    <div id="root3"></div>
+    <div id="root4"></div>
+    <div id="root5"></div>
+    <div id="root6"></div>
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+      const write = () => (
+        <>
+          <h1>Hi</h1>
+          <h3>Hello</h3>
+        </>
+      );
+
+      const testElement = (
+        <h1 style={{ color: "red", backgroundColor: "green" }}>Test</h1>
+      );
+
+      const element = (
+        <>
+          {write()} {write()} {testElement}
+        </>
+      );
+      ReactDOM.render(element, rootElement);
+
+      const rootElement2 = document.getElementById("root2");
+      const propsWrite = (title, description) => (
+        <>
+          <h1>{title}</h1>
+          <h3>{description}</h3>
+        </>
+      );
+
+      const element2 = (
+        <>
+          {propsWrite("Props", "it's very handy!")}
+          {propsWrite("TS", "I will study!")}
+          {testElement}
+        </>
+      );
+      ReactDOM.render(element2, rootElement2);
+
+      const rootElement3 = document.getElementById("root3");
+      const Write = ({ title, description }) => {
+        return (
+          <>
+            <h1>{title}</h1>
+            <h3>{description}</h3>
+          </>
+        );
+      };
+
+      const element3 = (
+        <>
+          <Write title="use JSX" description="Does it works?" />
+        </>
+      );
+      ReactDOM.render(element3, rootElement3);
+
+      const rootElement4 = document.getElementById("root4");
+      const WriteChildren = ({ title, description, children }) => {
+        return (
+          <>
+            <h1>{title}</h1>
+            <h3>{description}</h3>
+            {children}
+          </>
+        );
+      };
+
+      const element4 = (
+        <>
+          <WriteChildren title="About children" description="How it will work?">
+            <h1>Child?</h1>
+            <button>Child</button>
+            {testElement}
+          </WriteChildren>
+        </>
+      );
+      ReactDOM.render(element4, rootElement4);
+
+      const rootElement5 = document.getElementById("root5");
+      const WriteParent = ({ title, description, children }) => {
+        return (
+          <>
+            <h1>{title}</h1>
+            <h3>{description}</h3>
+            {children}
+          </>
+        );
+      };
+
+      const child = () => <h3>child</h3>;
+
+      const element5 = (
+        <>
+          <WriteParent title="About parent" description="How it will work?">
+            <child />
+            <child />
+            <child />
+          </WriteParent>
+        </>
+      );
+      ReactDOM.render(element5, rootElement5);
+
+      const rootElement6 = document.getElementById("root6");
+      const Text = ({ text }) => {
+        if (text[0] == text[0].toUpperCase()) {
+          return <h1>{text}</h1>;
+        } else {
+          return <h3> {text}</h3>;
+        }
+      };
+
+      const element6 = (
+        <>
+          <Text text="Test" />
+          <Text text="test" />
+        </>
+      );
+
+      ReactDOM.render(element6, rootElement6);
+    </script>
+  </body>
+</html>
